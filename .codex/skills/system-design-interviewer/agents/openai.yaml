@@ -1,0 +1,6 @@
+interface:
+  display_name: "System Design Interviewer"
+  short_description: "Run system design interviews and Notion prep notes"
+  default_prompt: "Use $system-design-interviewer to run a mock interview or create a reusable Notion system-design note from this topic."
+policy:
+  allow_implicit_invocation: true

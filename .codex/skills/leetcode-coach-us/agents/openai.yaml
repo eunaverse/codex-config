@@ -1,0 +1,6 @@
+interface:
+  display_name: "LeetCode Coach US"
+  short_description: "Build US interview-focused LeetCode plans and reviews"
+  default_prompt: "Use $leetcode-coach-us to generate todays coding interview plan and review yesterdays mistakes."
+policy:
+  allow_implicit_invocation: true

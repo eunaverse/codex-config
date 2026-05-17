@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3 /Users/eunhwa/.codex/hooks/pre_tool_safety_guard.py",
+            "timeout": 5,
+            "statusMessage": "Checking tool safety"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3 /Users/eunhwa/.codex/hooks/sync_codex_private_config.py",
+            "timeout": 120,
+            "statusMessage": "Syncing Codex private config"
+          }
+        ]
+      }
+    ]
+  }
+}

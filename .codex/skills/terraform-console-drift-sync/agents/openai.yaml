@@ -1,0 +1,4 @@
+interface:
+  display_name: "Terraform Drift Sync"
+  short_description: "Sync AWS Console changes back to Terraform code"
+  default_prompt: "Reconcile AWS console-side changes with local Terraform by detecting drift, updating code/state safely, validating with plan, and summarizing what changed."

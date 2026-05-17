@@ -1,0 +1,25 @@
+# Never commit secrets, runtime state, or heavy local data.
+.DS_Store
+*.log
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+
+.codex/auth.json
+.codex/history.jsonl
+.codex/transcription-history.jsonl
+.codex/session_index.jsonl
+.codex/sessions/
+.codex/archived_sessions/
+.codex/cache/
+.codex/plugins/
+.codex/.tmp/
+.codex/tmp/
+.codex/shell_snapshots/
+.codex/sqlite/
+.codex/computer-use/
+.codex/memories/
+.codex/state_*.sqlite*
+.codex/logs_*.sqlite*
+.sync/

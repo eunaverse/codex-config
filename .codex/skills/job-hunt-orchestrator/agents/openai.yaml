@@ -1,0 +1,6 @@
+interface:
+  display_name: "Job Hunt Orchestrator"
+  short_description: "Unify resume, coding, design, and behavioral prep"
+  default_prompt: "Use $job-hunt-orchestrator to build my weekly US job-prep plan from current status and target roles."
+policy:
+  allow_implicit_invocation: true

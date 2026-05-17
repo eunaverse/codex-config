@@ -1,0 +1,7 @@
+interface:
+  display_name: "Obsidian Notion Sync"
+  short_description: "Sync missing Obsidian outputs into Notion"
+  default_prompt: "Use $obsidian-notion-sync to sync missing Obsidian 50_Output dates into Notion US Dream."
+
+policy:
+  allow_implicit_invocation: true

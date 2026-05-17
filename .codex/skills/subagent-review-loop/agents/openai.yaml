@@ -1,0 +1,4 @@
+interface:
+  display_name: "Subagent Review Loop"
+  short_description: "Require fresh subagent review loops"
+  default_prompt: "Use $subagent-review-loop to request fresh subagent review until there are no actionable findings."

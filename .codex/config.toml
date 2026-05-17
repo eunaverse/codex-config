@@ -1,0 +1,137 @@
+model = "gpt-5.5"
+model_reasoning_effort = "xhigh"
+approvals_reviewer = "guardian_subagent"
+service_tier = "fast"
+
+[projects."/Users/eunhwa"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Intellij/be-bang9"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/.codex"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/IdeaProjects/be-bang9"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/terraform"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Obsidian"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Downloads"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Obsidian/myVault"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/IdeaProjects/sample"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/IdeaProjects/leetcode"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/IdeaProjects"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/intern-alerts"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/projects/job-alerts"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/projects"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Documents/Codex/2026-05-06/trapping-rain-water"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Documents/Codex/2026-05-07/characterreplacement"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Documents/Codex/2026-05-08/min-stack"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Documents/Codex/2026-05-08/daily-temperatures"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Documents/Codex/2026-05-09/largest-rectangle-in-histogram"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Documents/Codex/2026-05-10/class-solution-public-int-maxslidingwindow-int"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Documents/Codex/2026-05-16/kth-smallest-integer-in-bst"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Documents/Codex/2026-05-16/construct-binary-tree-from-preorder-and"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Documents/Codex/2026-05-17/overview-of-the-role-the-futureforce"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Documents"]
+trust_level = "trusted"
+
+[notice]
+fast_default_opt_out = true
+
+[notice.model_migrations]
+"gpt-5.1-codex-max" = "gpt-5.3-codex"
+"gpt-5.3-codex" = "gpt-5.4"
+
+[mcp_servers.notion]
+url = "https://mcp.notion.com/mcp"
+
+[mcp_servers.obsidian]
+command = "npx"
+args = ["-y", "obsidian-mcp", "/Users/eunhwa/Obsidian/myVault"]
+
+[marketplaces.openai-bundled]
+last_updated = "2026-05-17T10:38:02Z"
+source_type = "local"
+source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-05-16T00:26:56Z"
+source_type = "local"
+source = "/Users/eunhwa/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[features]
+apps = true
+memories = true
+hooks = true
+terminal_resize_reflow = true
+goals = true
+prevent_idle_sleep = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
+[plugins."superpowers@openai-curated"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[hooks.state]
+
+[hooks.state."/Users/eunhwa/.codex/hooks.json:post_tool_use:0:0"]
+enabled = true
+trusted_hash = "sha256:e8c600885094d74c46a0d339d8dfc776a3d6c5908e809f185988302f312a265d"
+
+# END managed by sync_mcp.rb

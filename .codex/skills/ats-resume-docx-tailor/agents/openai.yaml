@@ -1,0 +1,4 @@
+interface:
+  display_name: "ATS Resume DOCX Tailor"
+  short_description: "Create ATS-optimized DOCX resumes from job postings."
+  default_prompt: "Paste a job posting and ask me to create a tailored ATS-friendly resume DOCX."
