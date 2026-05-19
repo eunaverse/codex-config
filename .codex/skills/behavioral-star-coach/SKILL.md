@@ -64,7 +64,7 @@ When EUNWHA asks to write, organize, save, sync, or update an English interview 
 5. Write to Notion only after a clean cycle
 - Only create or update the Notion page after the latest 3 fresh reviewers report no actionable findings.
 - If reviewers conflict on a factual claim, require unverified company-specific evidence, or expose a missing ownership boundary, do not write the page as final. Mark the draft provisional and ask for the missing evidence or user decision.
-- If EUNWHA asks to bypass the review gate, ask for explicit confirmation before saving and mark any saved page as an unreviewed draft, not a final model answer.
+- If EUNWHA asks to bypass the review gate, do not write to the canonical Notion script library. Provide the draft in chat or local working context only, and explain that canonical Notion writes require a clean 3-reviewer pass.
 - Keep the Notion page focused on the final usable script, follow-up answers, coaching notes, and concise quality status. Do not paste reviewer names, long reviewer transcripts, internal critique history, or rejected findings unless EUNWHA explicitly asks.
 - In the final chat response, report the review-loop result. When writing to Notion, include a concise `Quality Review Log` section:
   - Review pass: `<number>`
