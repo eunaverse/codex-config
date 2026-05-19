@@ -34,7 +34,7 @@ Default workflow for new script requests:
 
 ## Direct Notion Write Review Loop
 
-When EUNWHA asks to write, organize, or update an English interview script directly in the Notion script library, the answer must pass a fresh 3-reviewer loop before any Notion write.
+When EUNWHA asks to write, organize, save, sync, or update an English interview script directly in the canonical Notion script library, the answer must pass a fresh 3-reviewer loop before any Notion write. Chat-only drafting, brainstorming, or quick rewrites do not require this gate unless EUNWHA asks to save the result to Notion.
 
 1. Build a local draft first
 - Fetch the Notion index and relevant child pages.
@@ -47,10 +47,12 @@ When EUNWHA asks to write, organize, or update an English interview script direc
 - Give each reviewer only the minimum shared context: prompt, target role or JD if available, current draft, verified evidence, ownership boundaries, and the quality gate.
 - Do not pass one reviewer's findings, your planned fixes, or hidden conclusions to the other reviewers.
 - Ask each reviewer to return either `no actionable findings` or a concise list of actionable weaknesses.
+- If subagents are unavailable, stop before the Notion write and tell EUNWHA the Notion write gate cannot be completed.
 
 3. Consolidate and revise
 - Wait for all 3 reviewer outputs before revising.
-- Treat overclaiming risk, weak evidence, unclear ownership, generic wording, missing follow-up resilience, and unnatural spoken phrasing as actionable.
+- Treat overclaiming risk, weak evidence, unclear ownership, generic wording, missing follow-up resilience, unsupported metrics or company facts, and unnatural spoken phrasing as actionable.
+- Treat any wording that implies ownership of database infrastructure, storage-layer internals, broad data infrastructure, company-specific facts, metrics, or product claims as actionable unless directly supported by EUNWHA's evidence or verified source material.
 - Ignore purely stylistic disagreements if they weaken evidence accuracy or spoken clarity.
 - If any reviewer gives an actionable finding, revise the draft and rerun the Backend Answer Quality Gate.
 
@@ -62,7 +64,14 @@ When EUNWHA asks to write, organize, or update an English interview script direc
 5. Write to Notion only after a clean cycle
 - Only create or update the Notion page after the latest 3 fresh reviewers report no actionable findings.
 - If reviewers conflict on a factual claim, require unverified company-specific evidence, or expose a missing ownership boundary, do not write the page as final. Mark the draft provisional and ask for the missing evidence or user decision.
-- Keep the Notion page focused on the final usable script, follow-up answers, coaching notes, and concise quality status. Do not paste long reviewer transcripts unless EUNWHA explicitly asks.
+- If EUNWHA asks to bypass the review gate, ask for explicit confirmation before saving and mark any saved page as an unreviewed draft, not a final model answer.
+- Keep the Notion page focused on the final usable script, follow-up answers, coaching notes, and concise quality status. Do not paste reviewer names, long reviewer transcripts, internal critique history, or rejected findings unless EUNWHA explicitly asks.
+- In the final chat response, report the review-loop result. When writing to Notion, include a concise `Quality Review Log` section:
+  - Review pass: `<number>`
+  - Reviewers: `3 fresh subagents; no reviewer reused`
+  - Result: `clean` or `revision required`
+  - Findings addressed: `<short bullets, or "none">`
+  - Notion write status: `blocked`, `pending`, or `completed after clean pass`
 
 ## Pre-Draft Guardrails
 
