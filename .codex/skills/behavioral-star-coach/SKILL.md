@@ -28,8 +28,41 @@ Default workflow for new script requests:
 1. Fetch the Notion index page first.
 2. Read the existing child pages that are relevant to the requested question or prompt family.
 3. Match the tone, level of specificity, and defensible Samsung backend ownership boundaries from the existing scripts.
-4. Create a new child page under the Notion index page for the new script unless the user explicitly asks only for chat output.
-5. Include the final script, concise Korean coaching notes if useful, and likely follow-up questions.
+4. Draft the script outside Notion first. Do not create or update the Notion page until the Direct Notion Write Review Loop below is clean.
+5. Create a new child page under the Notion index page for the new script unless the user explicitly asks only for chat output.
+6. Include the final script, concise Korean coaching notes if useful, likely follow-up questions, and a short review-loop summary when substantial revisions were made.
+
+## Direct Notion Write Review Loop
+
+When EUNWHA asks to write, organize, or update an English interview script directly in the Notion script library, the answer must pass a fresh 3-reviewer loop before any Notion write.
+
+1. Build a local draft first
+- Fetch the Notion index and relevant child pages.
+- Draft the answer in the current session using the Pre-Draft Guardrails, Backend Answer Quality Gate, and any relevant Samsung-specific evidence rules.
+- For existing-page updates, fetch the page and prepare the replacement content locally before calling a Notion update tool.
+
+2. Spawn three independent reviewers in parallel
+- Start exactly 3 separate subagents for the review cycle.
+- Each reviewer must be fresh for that cycle; never reuse a reviewer from a previous cycle.
+- Give each reviewer only the minimum shared context: prompt, target role or JD if available, current draft, verified evidence, ownership boundaries, and the quality gate.
+- Do not pass one reviewer's findings, your planned fixes, or hidden conclusions to the other reviewers.
+- Ask each reviewer to return either `no actionable findings` or a concise list of actionable weaknesses.
+
+3. Consolidate and revise
+- Wait for all 3 reviewer outputs before revising.
+- Treat overclaiming risk, weak evidence, unclear ownership, generic wording, missing follow-up resilience, and unnatural spoken phrasing as actionable.
+- Ignore purely stylistic disagreements if they weaken evidence accuracy or spoken clarity.
+- If any reviewer gives an actionable finding, revise the draft and rerun the Backend Answer Quality Gate.
+
+4. Repeat with three new reviewers after every revision
+- After any revision, start a new review cycle with 3 brand-new independent reviewers.
+- Do not reuse previous reviewer agents, even if their prior feedback was helpful.
+- Continue until the newest 3-reviewer cycle reports no actionable findings.
+
+5. Write to Notion only after a clean cycle
+- Only create or update the Notion page after the latest 3 fresh reviewers report no actionable findings.
+- If reviewers conflict on a factual claim, require unverified company-specific evidence, or expose a missing ownership boundary, do not write the page as final. Mark the draft provisional and ask for the missing evidence or user decision.
+- Keep the Notion page focused on the final usable script, follow-up answers, coaching notes, and concise quality status. Do not paste long reviewer transcripts unless EUNWHA explicitly asks.
 
 ## Pre-Draft Guardrails
 
@@ -127,6 +160,10 @@ When a draft fails any gate, label it as provisional and explain what informatio
 - Provide stronger, concise alternatives.
 - Run the Backend Answer Quality Gate before calling the answer final.
 
+6. Notion write gate
+- If the output will be written to the Notion script library, run the Direct Notion Write Review Loop before creating or updating the page.
+- A draft can be shown in chat before the loop is clean, but it must be labeled provisional.
+
 ## Output Format
 
 1. Story Bank (tagged by theme)
@@ -138,6 +175,7 @@ When a draft fails any gate, label it as provisional and explain what informatio
 7. Abstract Phrase Check
 8. Company-Specific Evidence Status
 9. Interviewer Challenge Simulation
+10. Direct Notion Write Review Summary, when Notion was updated
 
 ## References
 
