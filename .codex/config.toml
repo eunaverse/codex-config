@@ -140,4 +140,7 @@ enabled = true
 enabled = true
 trusted_hash = "sha256:e8c600885094d74c46a0d339d8dfc776a3d6c5908e809f185988302f312a265d"
 
+[hooks.state."/Users/eunhwa/.codex/hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:18fd1f2aa1d131bd5de7de7ea0dd81319391a9c45303267d83697385c8953669"
+
 # END managed by sync_mcp.rb
