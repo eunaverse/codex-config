@@ -90,7 +90,7 @@ command = "npx"
 args = ["-y", "obsidian-mcp", "/Users/eunhwa/Obsidian/myVault"]
 
 [marketplaces.openai-bundled]
-last_updated = "2026-05-19T11:21:51Z"
+last_updated = "2026-05-20T10:04:20Z"
 source_type = "local"
 source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
