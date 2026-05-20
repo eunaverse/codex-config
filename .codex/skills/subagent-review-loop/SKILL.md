@@ -1,6 +1,6 @@
 ---
 name: subagent-review-loop
-description: Require a fresh subagent review loop before final handoff. Use when Codex has completed a code, configuration, documentation, or skill change and needs independent review; when the user asks for subagent review; or when local instructions require review cycles until no actionable findings remain.
+description: Use when Codex has completed a code, configuration, documentation, or skill change and needs independent review before handoff; when the user asks for subagent review; or when local instructions require review gating.
 ---
 
 # Subagent Review Loop
@@ -18,8 +18,8 @@ all reviewers in the newest pass report no actionable findings.
    previous reviewer session.
 3. Give each reviewer only the task-local context needed to inspect the work:
    changed files, requirements, relevant commands, and any test output.
-4. Ask each reviewer for findings first, ordered by severity, with concrete file and line
-   references where possible.
+4. Ask each reviewer for findings first, ordered by severity, with concrete
+   file and line references where possible.
 5. If any reviewer reports actionable findings, fix them locally.
 6. Rerun the relevant verification for the affected area.
 7. Spawn another five new subagents for the next review pass.
