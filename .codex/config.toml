@@ -3,6 +3,8 @@ model_reasoning_effort = "xhigh"
 approvals_reviewer = "guardian_subagent"
 service_tier = "fast"
 
+notify = ["/Users/eunhwa/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+
 [projects."/Users/eunhwa"]
 trust_level = "trusted"
 
@@ -95,8 +97,25 @@ url = "https://mcp.notion.com/mcp"
 command = "npx"
 args = ["-y", "obsidian-mcp", "/Users/eunhwa/Obsidian/myVault"]
 
+[mcp_servers.node_repl]
+args = []
+command = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_MARKETPLACE_NAME = "openai-bundled"
+CODEX_CLI_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/codex"
+CODEX_HOME = "/Users/eunhwa/.codex"
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = ""
+NODE_REPL_NODE_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/node"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "167fdf579477181fba1773c1efb067b00c5a64fe85dafb50a2001bde198dc739"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/eunhwa/.codex"
+NODE_REPL_UNTRUSTED_ENV_ALLOWLIST = "BROWSER_USE_MARKETPLACE_NAME"
+
 [marketplaces.openai-bundled]
-last_updated = "2026-05-21T23:40:07Z"
+last_updated = "2026-05-22T13:11:36Z"
 source_type = "local"
 source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -112,6 +131,7 @@ hooks = true
 terminal_resize_reflow = true
 goals = true
 prevent_idle_sleep = true
+js_repl = false
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4
@@ -196,5 +216,17 @@ command = """sh -c '[ -n "$AOE_INSTANCE_ID" ] || exit 0; mkdir -p /tmp/aoe-hooks
 [[hooks.Stop.hooks]]
 type = "command"
 command = """sh -c '[ -n "$AOE_INSTANCE_ID" ] || exit 0; mkdir -p /tmp/aoe-hooks/$AOE_INSTANCE_ID && printf idle > /tmp/aoe-hooks/$AOE_INSTANCE_ID/status'"""
+
+[desktop]
+appearanceTheme = "system"
+preventSleepWhileRunning = true
+keepRemoteControlAwakeWhilePluggedIn = true
+notifications-turn-mode = "always"
+
+[desktop.open-in-target-preferences]
+global = "intellij"
+
+[desktop.open-in-target-preferences.perPath]
+"/Users/eunhwa/Documents/New project" = "intellij"
 
 # END managed by sync_mcp.rb
