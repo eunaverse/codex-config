@@ -1,5 +1,5 @@
-model = "gpt-5.3-codex-spark"
-model_reasoning_effort = "high"
+model = "gpt-5.5"
+model_reasoning_effort = "xhigh"
 approvals_reviewer = "guardian_subagent"
 service_tier = "fast"
 
