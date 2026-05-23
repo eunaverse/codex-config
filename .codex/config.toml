@@ -182,6 +182,9 @@ trusted_hash = "sha256:468e769b7fa9a394038435d8f488b60a675e7da57fbe00577fc009676
 [hooks.state."/Users/eunhwa/.codex/config.toml:stop:0:0"]
 trusted_hash = "sha256:49f3569621f2526d7e33fe637a480de82caf368264b0ecf1c29d8de679d0df2e"
 
+[hooks.state."/Users/eunhwa/IdeaProjects/be-bang9/.codex/hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:6aab81bfca8187ce02b2de3b79ac08553c73fe58c554c876e315e87799bf52be"
+
 [[hooks.SessionStart]]
 
 [[hooks.SessionStart.hooks]]
