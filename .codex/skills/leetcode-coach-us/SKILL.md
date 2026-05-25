@@ -47,6 +47,13 @@ Keep the flow natural and candidate-driven. Start with one broad prompt, let the
 
 When the user says an explanation is abstract or hard to think of, switch quickly to a tiny trace and a simpler mental model before returning to the formal invariant.
 
+## Complexity Explanation
+
+- Always derive time complexity from two parts: cost per operation/call and number of times that operation/call can happen.
+- When comparing brute force, backtracking, BFS, DFS, or optimized solutions, explain why the repetition count is linear, quadratic, exponential, or factorial before naming Big-O.
+- If the user questions a Big-O result, slow down and show a small branching/counting example, then connect it back to the formula.
+- Avoid jumping straight to the final notation; state the logic in plain language first, then give the interview-ready sentence.
+
 ## Reusable Coaching Cues
 
 - Monotonic stack: explain the trigger, such as nearest smaller on both sides or indices because the answer is distance.
