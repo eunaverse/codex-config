@@ -1,6 +1,6 @@
 interface:
   display_name: "Behavioral STAR Coach"
   short_description: "Prepare concise STAR stories for US tech interviews"
-  default_prompt: "Use $behavioral-star-coach to craft STAR answers for this interview and evaluate weak points."
+  default_prompt: "Use $behavioral-star-coach to craft a Notion-style STAR answer, review it, and update my interview script library."
 policy:
   allow_implicit_invocation: true
