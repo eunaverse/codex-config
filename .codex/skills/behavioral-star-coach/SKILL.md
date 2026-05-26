@@ -28,10 +28,11 @@ Default workflow for interview answer/script requests:
 1. Fetch the Notion index page first.
 2. Read existing child pages that are relevant to the requested question or prompt family before drafting. Do not rely on memory alone for the Notion tone.
 3. Match the tone, level of specificity, structure, and defensible Samsung backend ownership boundaries from the existing scripts.
-4. Draft the script outside Notion first. Do not create or update the Notion page until the Direct Notion Write Review Loop below is clean.
-5. Create or update a child page under the Notion index page for the final script by default. This is the default even if the user only says "write the answer", "prepare the script", "정리해줘", or similar wording.
-6. Skip the Notion write only when EUNWHA explicitly asks for chat-only output, brainstorming only, a quick explanation, or says not to update Notion.
-7. Include the final script, concise Korean coaching notes if useful, likely follow-up questions, and a short review-loop summary when substantial revisions were made.
+4. Run the Strength/Weakness Framing Preflight below before drafting.
+5. Draft the script outside Notion first. Do not create or update the Notion page until the Direct Notion Write Review Loop below is clean.
+6. Create or update a child page under the Notion index page for the final script by default. This is the default even if the user only says "write the answer", "prepare the script", "정리해줘", or similar wording.
+7. Skip the Notion write only when EUNWHA explicitly asks for chat-only output, brainstorming only, a quick explanation, or says not to update Notion.
+8. Include the final script, concise Korean coaching notes if useful, likely follow-up questions, and a short review-loop summary when substantial revisions were made.
 
 ## Direct Notion Write Review Loop
 
@@ -104,6 +105,41 @@ Run a "So what?" test on each motivation sentence:
 
 If the target company, product area, or concrete challenge is missing, label the draft provisional. Do not call it final.
 
+## Strength/Weakness Framing Preflight
+
+Run this before drafting any `strength`, `weakness`, `greatest strength`, `improvement`, or mixed strength/weakness answer.
+
+1. Choose one umbrella strength
+- Do not stack unrelated strengths with "also" unless they are clearly evidence of the same umbrella trait.
+- Preferred umbrella forms:
+  - `I bring structure to ambiguous or high-risk work by breaking it down, identifying risks, and turning it into a clear process the team can execute.`
+  - `I turn unclear or repetitive engineering work into reliable systems and processes.`
+- Use the first form when the evidence is mainly production execution and risk reduction.
+- Use the second form only when the answer must combine production risk work with workflow automation.
+
+2. Classify each example before writing
+- Production example: should prove risk breakdown, execution path, correctness, reliability, or safe rollout.
+- Workflow automation example: should prove reducing repeated manual coordination or making team execution more reliable.
+- New tools / agent workflows: use only as an optional add-on unless there is concrete impact. Frame as practical, low-risk adoption, not as the main strength.
+
+3. Check concept fit
+- If two examples do not follow from the same umbrella strength, either change the umbrella strength or move one example to `Optional add-on`.
+- Do not claim `same mindset` when the mechanism is different. Prefer:
+  - `I also apply that strength to team workflows...`
+  - `That also shows up in how I improve team workflows...`
+- Avoid turning the opening into "my strength is A, and also B." The first sentence should name one strength only.
+
+4. Keep spoken length realistic
+- `30-second version`: about 55-75 words. Use one strength sentence, one compact evidence phrase, and one weakness/change sentence.
+- `60-second answer`: about 115-145 words. Use one umbrella strength, at most two compact evidence examples, and a compressed weakness/change arc.
+- If reviewers repeatedly flag length, cut examples before adding explanations. Put secondary material under `Optional add-on`.
+
+5. Use natural spoken wording
+- Prefer `I don't just focus on...` over `I do not only focus on...`.
+- Prefer `keeping API specs updated alongside backend changes` over dense build-system wording unless the interviewer asks for technical detail.
+- Avoid vague pronouns in automation sentences. Name the object: `manual coordination`, `important updates`, `API specs`, or `PR and review activity`.
+- Avoid jargon such as `over-indexed`; say `spent too much time planning before getting feedback`.
+
 ## Backend Answer Quality Gate
 
 Do not treat an answer as a strong or final model answer until it passes these checks:
@@ -134,6 +170,7 @@ Do not treat an answer as a strong or final model answer until it passes these c
 
 7. Spoken clarity
 - The answer should be natural to say in 30, 60, or 90 seconds.
+- The labeled answer length must match realistic spoken delivery, including pauses.
 - Prefer one fluent script over fragmented notes when the user asks for a final answer.
 
 8. Follow-up resilience
