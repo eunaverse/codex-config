@@ -35,7 +35,7 @@ Default workflow for interview answer/script requests:
 
 ## Direct Notion Write Review Loop
 
-When EUNWHA asks to write, prepare, rewrite, finalize, organize, save, sync, or update an English interview answer/script, the default destination is the canonical Notion script library. The answer must pass a fresh 3-reviewer loop before any Notion write. Chat-only drafting, brainstorming, quick explanations, or mock-drill coaching do not require this gate only when EUNWHA explicitly asks not to update Notion or the request does not produce final answer wording.
+When EUNWHA asks to write, prepare, rewrite, finalize, organize, save, sync, or update an English interview answer/script, the default destination is the canonical Notion script library. The answer must pass a fresh 3-reviewer loop before any Notion write. Chat-only drafting, brainstorming, quick explanations, or mock-drill coaching skip this gate only when EUNWHA explicitly asks not to update Notion or the request does not produce final answer wording.
 
 1. Build a local draft first
 - Fetch the Notion index and relevant child pages.
