@@ -23,18 +23,19 @@ When EUNWHA asks for an English interview script, use this Notion page as the ca
 - Page title: `영어면접_세션_모음`
 - Existing reference pages include `Tell me about yourself`, `Walk me through your resume`, and `Why this role?`.
 
-Default workflow for new script requests:
+Default workflow for interview answer/script requests:
 
 1. Fetch the Notion index page first.
-2. Read the existing child pages that are relevant to the requested question or prompt family.
-3. Match the tone, level of specificity, and defensible Samsung backend ownership boundaries from the existing scripts.
+2. Read existing child pages that are relevant to the requested question or prompt family before drafting. Do not rely on memory alone for the Notion tone.
+3. Match the tone, level of specificity, structure, and defensible Samsung backend ownership boundaries from the existing scripts.
 4. Draft the script outside Notion first. Do not create or update the Notion page until the Direct Notion Write Review Loop below is clean.
-5. Create a new child page under the Notion index page for the new script unless the user explicitly asks only for chat output.
-6. Include the final script, concise Korean coaching notes if useful, likely follow-up questions, and a short review-loop summary when substantial revisions were made.
+5. Create or update a child page under the Notion index page for the final script by default. This is the default even if the user only says "write the answer", "prepare the script", "정리해줘", or similar wording.
+6. Skip the Notion write only when EUNWHA explicitly asks for chat-only output, brainstorming only, a quick explanation, or says not to update Notion.
+7. Include the final script, concise Korean coaching notes if useful, likely follow-up questions, and a short review-loop summary when substantial revisions were made.
 
 ## Direct Notion Write Review Loop
 
-When EUNWHA asks to write, organize, save, sync, or update an English interview script directly in the canonical Notion script library, the answer must pass a fresh 3-reviewer loop before any Notion write. Chat-only drafting, brainstorming, or quick rewrites do not require this gate unless EUNWHA asks to save the result to Notion.
+When EUNWHA asks to write, prepare, rewrite, finalize, organize, save, sync, or update an English interview answer/script, the default destination is the canonical Notion script library. The answer must pass a fresh 3-reviewer loop before any Notion write. Chat-only drafting, brainstorming, quick explanations, or mock-drill coaching do not require this gate only when EUNWHA explicitly asks not to update Notion or the request does not produce final answer wording.
 
 1. Build a local draft first
 - Fetch the Notion index and relevant child pages.
