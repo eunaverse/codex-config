@@ -127,7 +127,7 @@ CODEX_CLI_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/codex"
 url = "https://developers.openai.com/mcp"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-01T10:10:54Z"
+last_updated = "2026-06-02T10:15:20Z"
 source_type = "local"
 source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
