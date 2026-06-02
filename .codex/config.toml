@@ -107,6 +107,9 @@ url = "https://mcp.notion.com/mcp"
 command = "npx"
 args = ["-y", "obsidian-mcp", "/Users/eunhwa/Obsidian/myVault"]
 
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
+
 [mcp_servers.node_repl]
 args = []
 command = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/node_repl"
@@ -118,19 +121,15 @@ NODE_REPL_NODE_MODULE_DIRS = ""
 NODE_REPL_NODE_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/eunhwa/.codex"
 CODEX_HOME = "/Users/eunhwa/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "0b0d41e7a14a4903d2f95b0b3f427ed796b12c8edca2fa392a03df43997075ae"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "4b6bfaf4ed2ce9b5cd68e60a61642eb4927a36306ba8c8993f6058607b3530fb"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-SKY_CUA_SERVICE_PATH = "/Users/eunhwa/.codex/plugins/cache/openai-bundled/computer-use/1.0.799/Codex Computer Use.app"
 CODEX_CLI_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/codex"
 
-[mcp_servers.openaiDeveloperDocs]
-url = "https://developers.openai.com/mcp"
-
 [marketplaces.openai-bundled]
-last_updated = "2026-06-02T10:15:20Z"
+last_updated = "2026-06-02T23:40:42Z"
 source_type = "local"
 source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -161,9 +160,6 @@ enabled = true
 enabled = true
 
 [plugins."presentations@openai-primary-runtime"]
-enabled = true
-
-[plugins."computer-use@openai-bundled"]
 enabled = true
 
 [plugins."browser@openai-bundled"]
