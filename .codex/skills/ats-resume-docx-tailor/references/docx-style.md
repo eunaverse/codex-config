@@ -40,3 +40,9 @@ Use this for ATS-friendly SWE resumes that should import cleanly into Google Doc
 - Reading order should match visual order.
 - Important JD keywords should appear naturally in Summary, Skills, and top bullets.
 - Avoid keyword stuffing and unsupported claims.
+
+## Handoff Notes
+
+- Final handoff should explain the main edits, not just attach files.
+- For each major change, tie the new wording back to concrete evidence from the user's resume, notes, repo, or JD.
+- Prefer concise traceability such as `Summary rewritten to emphasize distributed backend systems -> evidence: Samsung migration, Cassandra 18K+ QPS, EKS ops -> rationale: matches backend/distributed systems JD signals`.
