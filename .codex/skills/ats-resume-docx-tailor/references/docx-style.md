@@ -4,7 +4,8 @@ Use this for ATS-friendly SWE resumes that should import cleanly into Google Doc
 
 ## Typography
 
-- Font: Arial.
+- Font: follow the source resume font first; use Arial only as the fallback when the source font is unavailable or unstable for DOCX/PDF rendering.
+- Size scale: follow the source resume first; use the ranges below only when the source file does not provide a stable, ATS-safe baseline.
 - Name: 18-22 pt, bold.
 - Contact: 9 pt.
 - Body: 10 pt preferred; 9.5 pt acceptable for one-page pressure; avoid <9 pt.
