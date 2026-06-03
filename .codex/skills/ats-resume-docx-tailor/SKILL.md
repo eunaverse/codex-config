@@ -47,8 +47,11 @@ Use existing context when available. Ask only for missing facts that affect trut
 
 5. Create the DOCX.
    - Use the `documents` skill when available.
+   - Start from the user's strongest existing resume design, not from a generic blank template. Preserve the overall visual hierarchy when it remains ATS-safe.
    - Use a single-column, text-first layout. Avoid tables, text boxes, icons-only links, graphics, skill bars, photos, headers/footers, and two-column templates.
    - Use real visible text for email, LinkedIn, and GitHub.
+   - If the source resume uses ATS-safe visual separators such as horizontal rules, keep them. Implement them with paragraph borders or equivalent DOCX-native formatting, not drawn shapes.
+   - Match the source resume's heading rhythm, section spacing, and top contact presentation as closely as possible while staying editable and ATS-safe.
    - Follow `references/docx-style.md` for typography and spacing.
    - Keep the editable `.docx` as the primary deliverable. Create PDF only when the user asks or when submitting directly requires PDF.
 
@@ -77,3 +80,5 @@ Do not paste the full resume back into chat unless the user asks for text review
 - Contact line: 9 pt.
 - Margins: 0.5-0.75 inch.
 - Prefer removing weaker bullets over shrinking below 9 pt.
+- If the source resume has a stronger ATS-safe look, treat that design as the baseline and only normalize the parts that would hurt parsing.
+- Avoid leaving obvious empty space at the bottom of a one-page resume. Before accepting large bottom whitespace, tighten vertical spacing, restore omitted ATS-safe separators, or add one more strong truthful bullet if it improves the page.
