@@ -11,6 +11,7 @@ Use this for ATS-friendly SWE resumes that should import cleanly into Google Doc
 - Body: 10 pt preferred; 9.5 pt acceptable for one-page pressure; avoid <9 pt.
 - Section headings: 10.5-11 pt, bold, uppercase optional.
 - Bullet text: 9.5-10 pt.
+- Preserve selective inline bold from the source design. Bold key metrics, business impact, and important architecture terms instead of making every bullet uniformly plain.
 
 ## Layout
 
