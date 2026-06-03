@@ -173,6 +173,9 @@ enabled = true
 [plugins."chrome@openai-bundled"]
 enabled = true
 
+[plugins."google-drive@openai-curated"]
+enabled = true
+
 [hooks.state]
 
 [hooks.state."/Users/eunhwa/.codex/hooks.json:post_tool_use:0:0"]
