@@ -73,7 +73,8 @@ Do not paste the full resume back into chat unless the user asks for text review
 
 ## Common Decisions
 
-- Default font: Arial.
+- Default font: follow the source resume font first; use Arial only as the fallback when the source font is unavailable or unstable for DOCX/PDF rendering.
+- Default sizing rule: follow the source resume's type scale first; use the sizes below only as fallback defaults.
 - Default body size: 10 pt when possible; use 9.5 pt only to preserve one page.
 - Section headings: 10.5-11 pt bold.
 - Name: 18-22 pt bold.
