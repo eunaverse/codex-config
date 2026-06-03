@@ -51,6 +51,7 @@ Use existing context when available. Ask only for missing facts that affect trut
    - Use a single-column, text-first layout. Avoid tables, text boxes, icons-only links, graphics, skill bars, photos, headers/footers, and two-column templates.
    - Use real visible text for email, LinkedIn, and GitHub.
    - If the source resume uses ATS-safe visual separators such as horizontal rules, keep them. Implement them with paragraph borders or equivalent DOCX-native formatting, not drawn shapes.
+   - If the source resume uses selective inline bold within summary or bullets, preserve that emphasis pattern for key metrics, impact words, and architecture phrases. Do not flatten everything into plain body text.
    - Match the source resume's heading rhythm, section spacing, and top contact presentation as closely as possible while staying editable and ATS-safe.
    - Follow `references/docx-style.md` for typography and spacing.
    - Keep the editable `.docx` as the primary deliverable. Create PDF only when the user asks or when submitting directly requires PDF.
