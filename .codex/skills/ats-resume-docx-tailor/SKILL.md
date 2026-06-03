@@ -68,7 +68,12 @@ Deliver:
 - A final `.docx` link.
 - Optionally a matching `.pdf` link only if requested.
 - A short note listing the important ATS keywords covered and any verification limitation.
+- A concise change summary that explains:
+  - which sections or bullets were changed,
+  - what source evidence or resume content justified each change,
+  - and why the change improves JD fit, ATS coverage, or recruiter readability.
 
+When possible, describe changes in a compact `before -> after -> evidence -> rationale` style. Do not dump the full resume text unless the user asks for it.
 Do not paste the full resume back into chat unless the user asks for text review.
 
 ## Common Decisions
