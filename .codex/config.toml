@@ -106,6 +106,9 @@ trust_level = "trusted"
 [projects."/Users/eunhwa/Intellij/eunhwa99.github.io"]
 trust_level = "trusted"
 
+[projects."/Users/eunhwa/Documents/Codex/2026-06-07/start-notification-system-design-itnerview"]
+trust_level = "trusted"
+
 [notice]
 fast_default_opt_out = true
 
