@@ -129,25 +129,25 @@ url = "https://developers.openai.com/mcp"
 
 [mcp_servers.node_repl]
 args = []
-command = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/node_repl"
+command = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
 startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = ""
-NODE_REPL_NODE_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/node"
+NODE_REPL_NODE_MODULE_DIRS = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/eunhwa/.codex"
 CODEX_HOME = "/Users/eunhwa/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "4946b004b23af02244ece97240aceb8d123475207fa6a6fc399486bd7086049f"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "72614174f4dad67a58d46a3ac759cffb45c92fa48a293af4c4ea35102ba391ba"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.602.71036"
+BROWSER_USE_CODEX_APP_VERSION = "26.608.12217"
 CODEX_CLI_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/codex"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-09T10:36:09Z"
+last_updated = "2026-06-09T23:33:33Z"
 source_type = "local"
 source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
