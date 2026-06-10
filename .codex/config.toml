@@ -203,4 +203,23 @@ global = "intellij"
 [desktop.open-in-target-preferences.perPath]
 "/Users/eunhwa/Documents/New project" = "intellij"
 
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
+startup_timeout_sec = 20
+required = false
+
+[mcp_servers.firecrawl]
+command = "powershell.exe"
+args = ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", ".codex/mcp/firecrawl.ps1"]
+startup_timeout_sec = 20
+required = false
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["-y", "@playwright/mcp@latest"]
+startup_timeout_sec = 20
+required = false
+
 # END managed by sync_mcp.rb
