@@ -1,85 +1,83 @@
 ---
 name: planning-e2e-coverage
-description: [TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it.]
+description: Use when planning or tightening end-to-end coverage for a product, feature, or web flow; when Playwright or browser-level tests are too shallow; or when Codex should generate a project-specific E2E checklist, propose test buckets, and strengthen plans with interaction, failure-state, responsive, and visual-stability coverage.
 ---
 
-# Planning E2e Coverage
+# Planning E2E Coverage
 
 ## Overview
 
-[TODO: 1-2 sentences explaining what this skill enables]
+Produce project-aware E2E coverage that checks how the product actually behaves, not just whether routes load. Generate a reusable checklist document, propose a maintainable `tests/e2e` structure, and strengthen any implementation plan with button-level, state-level, responsive, and visual-stability expectations.
 
-## Structuring This Skill
+## Workflow
 
-[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
+1. Inspect project context before writing anything.
+2. Identify the main user journeys and key screens.
+3. Break each critical screen into interactions, states, and layout risks.
+4. Choose responsive checkpoints that match the product.
+5. Write the checklist document and propose test buckets.
+6. If a plan document exists, strengthen its E2E coverage.
 
-**1. Workflow-Based** (best for sequential processes)
-- Works well when there are clear step-by-step procedures
-- Example: DOCX skill with "Workflow Decision Tree" -> "Reading" -> "Creating" -> "Editing"
-- Structure: ## Overview -> ## Workflow Decision Tree -> ## Step 1 -> ## Step 2...
+## Project Context Pass
 
-**2. Task-Based** (best for tool collections)
-- Works well when the skill offers different operations/capabilities
-- Example: PDF skill with "Quick Start" -> "Merge PDFs" -> "Split PDFs" -> "Extract Text"
-- Structure: ## Overview -> ## Quick Start -> ## Task Category 1 -> ## Task Category 2...
+Read only the artifacts needed to ground the checklist:
 
-**3. Reference/Guidelines** (best for standards or specifications)
-- Works well for brand guidelines, coding standards, or requirements
-- Example: Brand styling with "Brand Guidelines" -> "Colors" -> "Typography" -> "Features"
-- Structure: ## Overview -> ## Guidelines -> ## Specifications -> ## Usage...
+- product spec or feature notes
+- implementation plan if one exists
+- app routes, major screens, or page components
+- existing `tests/e2e` structure
+- package scripts or current E2E runner setup
 
-**4. Capabilities-Based** (best for integrated systems)
-- Works well when the skill provides multiple interrelated features
-- Example: Product Management with "Core Capabilities" -> numbered capability list
-- Structure: ## Overview -> ## Core Capabilities -> ### 1. Feature -> ### 2. Feature...
+Do not write a generic checklist before inspecting the project.
 
-Patterns can be mixed and matched as needed. Most skills combine patterns (e.g., start with task-based, add workflow for complex operations).
+## Coverage Rules
 
-Delete this entire "Structuring This Skill" section when done - it's just guidance.]
+Always enforce these rules:
 
-## [TODO: Replace with the first main section based on chosen structure]
+- Do not treat route-load checks as sufficient E2E coverage.
+- Identify the primary CTA on each critical screen and the important secondary actions.
+- Cover state changes, not just clicks. At minimum consider `success`, `error`, `loading`, `empty`, and `populated` when relevant.
+- Include responsive checks for small, medium, and large viewports chosen from project context.
+- Include visual-stability checks such as overflow, clipping, overlap, hidden CTAs, awkward wrapping, and broken scroll behavior.
+- Keep the checklist product-facing and the test bucket proposal engineering-facing.
 
-[TODO: Add content here. See examples in existing skills:
-- Code samples for technical skills
-- Decision trees for complex workflows
-- Concrete examples with realistic user requests
-- References to scripts/templates/references as needed]
+If the project is not a browser UI, do not force Playwright-specific structure. Adapt the output to the actual browser-level test stack in use.
 
-## Resources (optional)
+## Outputs
 
-Create only the resource directories this skill actually needs. Delete this section if no resources are required.
+Generate these outputs by default:
 
-### scripts/
-Executable code (Python/Bash/etc.) that can be run directly to perform specific operations.
+1. A checklist document under the project's docs area such as:
+   `docs/.../<date>-<feature>-e2e-checklist.md`
+2. A proposed `tests/e2e` bucket structure based on user journeys and risk areas
+3. E2E coverage additions for any existing implementation plan that is missing interaction, state, responsive, or visual-review expectations
 
-**Examples from other skills:**
-- PDF skill: `fill_fillable_fields.py`, `extract_form_field_info.py` - utilities for PDF manipulation
-- DOCX skill: `document.py`, `utilities.py` - Python modules for document processing
+Only generate actual spec files when the user asks for them or when a local workflow explicitly benefits from immediate scaffolding.
 
-**Appropriate for:** Python scripts, shell scripts, or any executable code that performs automation, data processing, or specific operations.
+## Responsive Guidance
 
-**Note:** Scripts may be executed without loading into context, but can still be read by Codex for patching or environment adjustments.
+Pick viewports from product context instead of hard-coding a single trio for every app.
 
-### references/
-Documentation and reference material intended to be loaded into context to inform Codex's process and thinking.
+Good defaults for a web product:
 
-**Examples from other skills:**
-- Product management: `communication.md`, `context_building.md` - detailed workflow guides
-- BigQuery: API reference documentation and query examples
-- Finance: Schema documentation, company policies
+- small mobile
+- tablet or narrow laptop
+- desktop
 
-**Appropriate for:** In-depth documentation, API references, database schemas, comprehensive guides, or any detailed information that Codex should reference while working.
+Prefer product-relevant sizes when the app clearly targets a narrower set of devices.
 
-### assets/
-Files not intended to be loaded into context, but rather used within the output Codex produces.
+## Manual Review Expectations
 
-**Examples from other skills:**
-- Brand styling: PowerPoint template files (.pptx), logo files
-- Frontend builder: HTML/React boilerplate project directories
-- Typography: Font files (.ttf, .woff2)
+Automated assertions are not enough for UI-heavy work. For milestone or release-level checks, recommend screenshot capture and manual review of the most important screens for:
 
-**Appropriate for:** Templates, boilerplate code, document templates, images, icons, fonts, or any files meant to be copied or used in the final output.
+- text clipping
+- overlapping cards or panels
+- hidden or off-screen CTAs
+- unstable spacing at smaller widths
+- decorative layers obscuring content
 
----
+## Reference File
 
-**Not every skill requires all three types of resources.**
+For checklist section prompts, test-bucket patterns, and adaptable viewport guidance, read:
+
+- `references/e2e-checklist-template.md`
