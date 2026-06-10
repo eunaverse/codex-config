@@ -165,6 +165,10 @@ goals = true
 prevent_idle_sleep = true
 js_repl = false
 
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "model", "reasoning", "project-name", "git-branch"]
+status_line_use_colors = true
+
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 
