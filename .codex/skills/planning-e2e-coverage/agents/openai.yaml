@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan E2E Coverage"
+  short_description: "Project-aware E2E coverage planning"
+  default_prompt: "Use $planning-e2e-coverage to review this project and produce a product-aware E2E checklist, test buckets, and plan-level coverage additions."
