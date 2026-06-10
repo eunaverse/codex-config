@@ -80,11 +80,6 @@ BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
 BROWSER_USE_CODEX_APP_VERSION = "26.608.12217"
 CODEX_CLI_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/codex"
 
-[marketplaces.openai-bundled]
-last_updated = "2026-06-09T23:33:33Z"
-source_type = "local"
-source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
-
 [marketplaces.openai-primary-runtime]
 last_updated = "2026-06-01T22:31:59Z"
 source_type = "local"
@@ -224,5 +219,10 @@ command = "npx"
 args = ["-y", "@playwright/mcp@latest"]
 startup_timeout_sec = 20
 required = false
+
+[marketplaces.openai-bundled]
+last_updated = "2026-06-10T22:35:21Z"
+source_type = "local"
+source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 # END managed by sync_mcp.rb
