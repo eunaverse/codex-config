@@ -1,8 +1,10 @@
 model = "gpt-5.4"
 model_reasoning_effort = "medium"
-approvals_reviewer = "guardian_subagent"
+approvals_reviewer = "user"
 
 notify = ["/Users/eunhwa/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
 
 [projects."/Users/eunhwa"]
 trust_level = "trusted"
