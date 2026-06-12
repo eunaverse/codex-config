@@ -1,0 +1,4 @@
+interface:
+  display_name: "PR Conflict Preserver"
+  short_description: "Preserve both sides while resolving safe PR conflicts"
+  default_prompt: "Use $pr-conflict-preserver to resolve a PR conflict without losing either side."
