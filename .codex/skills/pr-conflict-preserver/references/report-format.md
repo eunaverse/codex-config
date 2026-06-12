@@ -10,7 +10,7 @@
 - `resolution_branch`: branch created for the run
 - `artifact_dir`: timestamped artifact directory inside the worktree
 - `steps`: ordered merge attempts and their outcomes
-- `final_status`: `committed`, `unresolved`, or `validation_failed`
+- `final_status`: `committed`, `resolved`, `unresolved`, or `validation_failed`
 
 ## Per-Step Fields
 

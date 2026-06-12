@@ -4,7 +4,6 @@ from __future__ import annotations
 import argparse
 import ast
 import json
-import os
 import re
 import shutil
 import subprocess
@@ -44,10 +43,6 @@ def git_bytes(repo: Path, *args: str, check: bool = True) -> subprocess.Complete
 
 def sanitize(value: str) -> str:
     return re.sub(r"[^A-Za-z0-9._-]+", "-", value).strip("-") or "item"
-
-
-def decode_text(raw: bytes) -> str:
-    return raw.decode("utf-8", errors="surrogateescape")
 
 
 def is_binary(raw: bytes) -> bool:
@@ -466,10 +461,11 @@ def determine_mode(args: argparse.Namespace) -> str:
 def main() -> int:
     args = build_parser().parse_args()
     require_tool("git")
-    require_tool("gh")
     repo = get_repo_root()
-    ensure_gh_auth(repo)
     mode = determine_mode(args)
+    if mode in {"pr-vs-base", "pr-vs-pr"}:
+        require_tool("gh")
+        ensure_gh_auth(repo)
     remote = args.remote
     now = datetime.now().strftime("%Y%m%d-%H%M%S")
 
@@ -542,7 +538,7 @@ def main() -> int:
         )
         steps = [step]
 
-    final_status = "committed"
+    final_status = "committed" if not args.no_commit else "resolved"
     for step in steps:
         if step["status"] == "unresolved":
             final_status = "unresolved"
