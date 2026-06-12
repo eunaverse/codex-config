@@ -1,85 +1,110 @@
 ---
 name: pr-conflict-preserver
-description: [TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it.]
+description: Preserve both sides while resolving safe GitHub PR conflicts. Use when Codex needs to analyze or resolve a PR vs base-branch conflict, a PR vs PR conflict, or a conflicted merge where no side may be dropped or silently rewritten. This skill only auto-resolves non-overlapping text conflicts, preserves base/ours/theirs artifacts for every unresolved hunk, writes machine-readable and human-readable reports, and stops instead of guessing when semantic overlap is detected.
 ---
 
-# Pr Conflict Preserver
+# PR Conflict Preserver
 
 ## Overview
 
-[TODO: 1-2 sentences explaining what this skill enables]
+Use this skill to resolve Git conflicts conservatively when content loss is unacceptable. The goal is to keep both sides intact, auto-resolve only clearly non-overlapping text edits, validate the result, and stop with preserved artifacts whenever a semantic decision would otherwise be guessed.
 
-## Structuring This Skill
+## Workflow
 
-[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
+1. Confirm the repository policy before touching branches or PR state.
+2. Inspect local state with `git status --short --branch` and avoid staging unrelated changes.
+3. Prefer running the bundled script from the repository root. It creates an isolated worktree and does not rewrite the caller's current branch.
+4. Let the script fetch PR metadata with `gh`, create a conflict-resolution branch, attempt the merge, auto-resolve only safe hunks, and write reports plus preserved artifacts.
+5. If unresolved hunks remain, stop and review the generated report instead of forcing a merge.
+6. If all hunks are safely resolved and validation passes, allow the script to create the resolution commit.
 
-**1. Workflow-Based** (best for sequential processes)
-- Works well when there are clear step-by-step procedures
-- Example: DOCX skill with "Workflow Decision Tree" -> "Reading" -> "Creating" -> "Editing"
-- Structure: ## Overview -> ## Workflow Decision Tree -> ## Step 1 -> ## Step 2...
+## Safety Contract
 
-**2. Task-Based** (best for tool collections)
-- Works well when the skill offers different operations/capabilities
-- Example: PDF skill with "Quick Start" -> "Merge PDFs" -> "Split PDFs" -> "Extract Text"
-- Structure: ## Overview -> ## Quick Start -> ## Task Category 1 -> ## Task Category 2...
+- Never drop `ours`, `theirs`, or `base` content silently.
+- Never auto-resolve overlapping edits to the same base range.
+- Never normalize, summarize, or restyle conflicting text as part of conflict resolution.
+- Preserve every unresolved conflict in two places:
+  - inside the working file as diff3 markers
+  - inside the artifact directory as raw `base`, `ours`, and `theirs` snapshots plus hunk metadata
+- Treat binary conflicts as unresolved unless the user gives a file-type-specific rule.
+- Commit only when there are no unresolved conflicts and validation passes.
+- Do not push, update the GitHub PR, or mutate the user's original branch unless the user explicitly asks.
 
-**3. Reference/Guidelines** (best for standards or specifications)
-- Works well for brand guidelines, coding standards, or requirements
-- Example: Brand styling with "Brand Guidelines" -> "Colors" -> "Typography" -> "Features"
-- Structure: ## Overview -> ## Guidelines -> ## Specifications -> ## Usage...
+## Supported Modes
 
-**4. Capabilities-Based** (best for integrated systems)
-- Works well when the skill provides multiple interrelated features
-- Example: Product Management with "Core Capabilities" -> numbered capability list
-- Structure: ## Overview -> ## Core Capabilities -> ### 1. Feature -> ### 2. Feature...
+### PR vs Base
 
-Patterns can be mixed and matched as needed. Most skills combine patterns (e.g., start with task-based, add workflow for complex operations).
+Use when one PR conflicts with its target branch.
 
-Delete this entire "Structuring This Skill" section when done - it's just guidance.]
+```bash
+python3 ~/.codex/skills/pr-conflict-preserver/scripts/resolve_pr_conflicts.py \
+  --pr 123
+```
 
-## [TODO: Replace with the first main section based on chosen structure]
+The script reads the PR's `baseRefName` from GitHub, fetches the PR head through `origin pull/<n>/head`, creates an isolated worktree from the fetched base branch, and attempts the merge there.
 
-[TODO: Add content here. See examples in existing skills:
-- Code samples for technical skills
-- Decision trees for complex workflows
-- Concrete examples with realistic user requests
-- References to scripts/templates/references as needed]
+### PR vs PR
 
-## Resources (optional)
+Use when two PRs collide and you want to see whether the second can be applied after the first without dropping content.
 
-Create only the resource directories this skill actually needs. Delete this section if no resources are required.
+```bash
+python3 ~/.codex/skills/pr-conflict-preserver/scripts/resolve_pr_conflicts.py \
+  --pr 123 \
+  --against-pr 456
+```
 
-### scripts/
-Executable code (Python/Bash/etc.) that can be run directly to perform specific operations.
+This simulates:
 
-**Examples from other skills:**
-- PDF skill: `fill_fillable_fields.py`, `extract_form_field_info.py` - utilities for PDF manipulation
-- DOCX skill: `document.py`, `utilities.py` - Python modules for document processing
+1. start from the shared or declared base branch
+2. merge PR `123`
+3. merge PR `456`
 
-**Appropriate for:** Python scripts, shell scripts, or any executable code that performs automation, data processing, or specific operations.
+If PR `123` itself cannot be merged safely onto the base, the script stops before attempting PR `456`.
 
-**Note:** Scripts may be executed without loading into context, but can still be read by Codex for patching or environment adjustments.
+### Branch vs Branch
 
-### references/
-Documentation and reference material intended to be loaded into context to inform Codex's process and thinking.
+Use when the GitHub PR numbers are not the best selector but the same safety rules still apply.
 
-**Examples from other skills:**
-- Product management: `communication.md`, `context_building.md` - detailed workflow guides
-- BigQuery: API reference documentation and query examples
-- Finance: Schema documentation, company policies
+```bash
+python3 ~/.codex/skills/pr-conflict-preserver/scripts/resolve_pr_conflicts.py \
+  --base-branch main \
+  --head-branch feature/example
+```
 
-**Appropriate for:** In-depth documentation, API references, database schemas, comprehensive guides, or any detailed information that Codex should reference while working.
+## Validation
 
-### assets/
-Files not intended to be loaded into context, but rather used within the output Codex produces.
+The script always runs:
 
-**Examples from other skills:**
-- Brand styling: PowerPoint template files (.pptx), logo files
-- Frontend builder: HTML/React boilerplate project directories
-- Typography: Font files (.ttf, .woff2)
+- `git diff --check`
+- syntax or structure checks for recognized file types:
+  - Python: `ast.parse`
+  - JSON: `json.loads`
+  - TOML: `tomllib.loads`
+  - YAML: `yaml.safe_load` if PyYAML is installed
 
-**Appropriate for:** Templates, boilerplate code, document templates, images, icons, fonts, or any files meant to be copied or used in the final output.
+If unresolved conflicts remain, validation does not attempt to bless the result. If validation fails after a supposedly safe auto-merge, the script stops and reports the failure without committing.
 
----
+## Artifacts
 
-**Not every skill requires all three types of resources.**
+Each run writes a timestamped directory under `.codex-conflict-preserver/` inside the isolated worktree:
+
+- `summary.json`: machine-readable outcome
+- `summary.md`: concise human report
+- `files/<sanitized-path>/base`
+- `files/<sanitized-path>/ours`
+- `files/<sanitized-path>/theirs`
+- `files/<sanitized-path>/hunks.json`
+
+Read `references/report-format.md` when you need the exact artifact semantics.
+
+## Rules For Manual Follow-Up
+
+When the script stops with unresolved conflicts:
+
+1. Read `summary.md` first.
+2. Open only the unresolved files listed there.
+3. Compare the inline diff3 markers with the preserved sidecar artifacts.
+4. Decide manually only for the specific unresolved hunks.
+5. Re-run repository tests after manual edits before committing.
+
+Do not delete the artifact directory until the resolution branch is merged or intentionally abandoned.
