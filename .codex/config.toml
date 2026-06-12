@@ -77,18 +77,23 @@ NODE_REPL_NODE_MODULE_DIRS = "/Users/eunhwa/Applications/Codex.app/Contents/Reso
 NODE_REPL_NODE_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/eunhwa/.codex"
 CODEX_HOME = "/Users/eunhwa/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "72614174f4dad67a58d46a3ac759cffb45c92fa48a293af4c4ea35102ba391ba"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "a3f3ca79fe2bff56076b895f1f13a8f673168160bd79d880cc34b4500e08a71c"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.608.12217"
+BROWSER_USE_CODEX_APP_VERSION = "26.609.30741"
 CODEX_CLI_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/codex"
 
 [marketplaces.openai-primary-runtime]
 last_updated = "2026-06-01T22:31:59Z"
 source_type = "local"
 source = "/Users/eunhwa/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[marketplaces.openai-bundled]
+last_updated = "2026-06-12T09:28:12Z"
+source_type = "local"
+source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [features]
 apps = true
@@ -224,10 +229,5 @@ command = "npx"
 args = ["-y", "@playwright/mcp@latest"]
 startup_timeout_sec = 20
 required = false
-
-[marketplaces.openai-bundled]
-last_updated = "2026-06-10T22:35:21Z"
-source_type = "local"
-source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 # END managed by sync_mcp.rb
