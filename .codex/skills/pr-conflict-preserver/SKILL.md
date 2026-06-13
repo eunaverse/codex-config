@@ -17,6 +17,7 @@ Use this skill to resolve Git conflicts conservatively when content loss is unac
 4. Let the script fetch PR metadata with `gh`, create a conflict-resolution branch, attempt the merge, auto-resolve only safe hunks, and write reports plus preserved artifacts.
 5. If unresolved hunks remain, stop and review the generated report instead of forcing a merge.
 6. If all hunks are safely resolved and validation passes, allow the script to create the resolution commit.
+7. If the user explicitly asks to update the actual PR, fast-forward the PR head branch to the validated resolution commit and push that PR head branch. Do not stop at leaving the fix only on the temporary resolution branch.
 
 ## Safety Contract
 
@@ -29,6 +30,7 @@ Use this skill to resolve Git conflicts conservatively when content loss is unac
 - Treat binary conflicts as unresolved unless the user gives a file-type-specific rule.
 - Commit only when there are no unresolved conflicts and validation passes.
 - Do not push, update the GitHub PR, or mutate the user's original branch unless the user explicitly asks.
+- When the user does explicitly ask to update the PR, apply the final resolved commit onto the PR head branch itself and push that branch, so the open PR becomes clean.
 
 ## Supported Modes
 
@@ -108,3 +110,15 @@ When the script stops with unresolved conflicts:
 5. Re-run repository tests after manual edits before committing.
 
 Do not delete the artifact directory until the resolution branch is merged or intentionally abandoned.
+
+## Applying Back To The PR Branch
+
+If the user asked for the open PR itself to be fixed:
+
+1. Verify the PR head branch worktree is clean.
+2. Confirm the resolution commit descends from the PR head branch tip so a fast-forward is possible.
+3. Fast-forward the PR head branch to the validated resolution commit.
+4. Push the PR head branch, not just the temporary resolution branch.
+5. Report the PR URL, pushed branch name, and final mergeability state.
+
+If the resolution commit cannot be fast-forwarded onto the PR head branch, stop and explain the blocker instead of rewriting history.
