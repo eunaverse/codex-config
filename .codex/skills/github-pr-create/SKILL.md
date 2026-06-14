@@ -51,7 +51,11 @@ The script:
 
 ## PR Body
 
-Follow the repository PR template when present. If no issue is provided, avoid fake closing keywords such as `close #번호`; use `관련 이슈 없음` or the repo's preferred placeholder.
+Follow the repository PR template when present. If the task is tied to a real
+issue, include an issue-closing line in the PR body by default, such as
+`closes #59`, unless the repo explicitly uses a different linking convention.
+If no issue is provided, avoid fake closing keywords such as `close #번호`; use
+`관련 이슈 없음` or the repo's preferred placeholder.
 
 Include:
 - summary of user-visible or API behavior changes
