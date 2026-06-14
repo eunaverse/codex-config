@@ -91,7 +91,7 @@ source_type = "local"
 source = "/Users/eunhwa/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-13T00:31:54Z"
+last_updated = "2026-06-14T02:44:51Z"
 source_type = "local"
 source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
