@@ -88,11 +88,6 @@ BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
 BROWSER_USE_CODEX_APP_VERSION = "26.609.41114"
 CODEX_CLI_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/codex"
 
-[marketplaces.openai-primary-runtime]
-last_updated = "2026-06-01T22:31:59Z"
-source_type = "local"
-source = "/Users/eunhwa/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
-
 [marketplaces.openai-bundled]
 last_updated = "2026-06-14T02:44:51Z"
 source_type = "local"
@@ -133,6 +128,9 @@ enabled = true
 enabled = true
 
 [plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
 enabled = true
 
 [hooks.state]
@@ -232,5 +230,10 @@ command = "npx"
 args = ["-y", "@playwright/mcp@latest"]
 startup_timeout_sec = 20
 required = false
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-06-15T03:27:28Z"
+source_type = "local"
+source = "/Users/eunhwa/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 # END managed by sync_mcp.rb
