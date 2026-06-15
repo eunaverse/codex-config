@@ -5,6 +5,7 @@ approvals_reviewer = "user"
 notify = ["/Users/eunhwa/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 approval_policy = "never"
 sandbox_mode = "danger-full-access"
+service_tier = "default"
 
 [projects."/Users/eunhwa"]
 trust_level = "trusted"
@@ -88,11 +89,6 @@ BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
 BROWSER_USE_CODEX_APP_VERSION = "26.609.41114"
 CODEX_CLI_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/codex"
 
-[marketplaces.openai-bundled]
-last_updated = "2026-06-14T02:44:51Z"
-source_type = "local"
-source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
-
 [features]
 apps = true
 memories = true
@@ -124,13 +120,13 @@ enabled = true
 [plugins."google-drive@openai-curated"]
 enabled = true
 
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
 [plugins."browser@openai-bundled"]
 enabled = true
 
 [plugins."chrome@openai-bundled"]
-enabled = true
-
-[plugins."pdf@openai-primary-runtime"]
 enabled = true
 
 [hooks.state]
@@ -211,6 +207,11 @@ global = "intellij"
 
 [desktop.open-in-target-preferences.perPath]
 "/Users/eunhwa/Documents/New project" = "intellij"
+
+[marketplaces.openai-bundled]
+last_updated = "2026-06-15T10:35:02Z"
+source_type = "local"
+source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 
 [mcp_servers.context7]
