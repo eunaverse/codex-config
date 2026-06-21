@@ -219,6 +219,11 @@ last_updated = "2026-06-21T10:13:28Z"
 source_type = "local"
 source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-06-21T10:27:27Z"
+source_type = "local"
+source = "/Users/eunhwa/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
 
 [mcp_servers.context7]
 command = "npx"
@@ -237,10 +242,5 @@ command = "npx"
 args = ["-y", "@playwright/mcp@latest"]
 startup_timeout_sec = 20
 required = false
-
-[marketplaces.openai-primary-runtime]
-last_updated = "2026-06-15T03:27:28Z"
-source_type = "local"
-source = "/Users/eunhwa/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 # END managed by sync_mcp.rb
