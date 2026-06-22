@@ -135,6 +135,9 @@ enabled = true
 [plugins."chrome@openai-bundled"]
 enabled = true
 
+[plugins."sites@openai-bundled"]
+enabled = true
+
 [hooks.state]
 
 [hooks.state."/Users/eunhwa/.codex/hooks.json:post_tool_use:0:0"]
@@ -215,7 +218,7 @@ global = "intellij"
 "/Users/eunhwa/Documents/New project" = "intellij"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-21T10:13:28Z"
+last_updated = "2026-06-22T00:19:31Z"
 source_type = "local"
 source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
