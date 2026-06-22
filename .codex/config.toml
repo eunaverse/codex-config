@@ -230,7 +230,8 @@ source_type = "local"
 source = "/Users/eunhwa/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 [marketplaces.ponytail]
-last_updated = "2026-06-22T02:49:02Z"
+last_updated = "2026-06-22T04:07:06Z"
+last_revision = "6da37bfa7d0282522c7785759f4d2f1544015354"
 source_type = "git"
 source = "https://github.com/DietrichGebert/ponytail.git"
 
