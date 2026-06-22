@@ -5,7 +5,6 @@ approvals_reviewer = "user"
 notify = ["/Users/eunhwa/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 approval_policy = "never"
 sandbox_mode = "danger-full-access"
-service_tier = "default"
 
 [projects."/Users/eunhwa"]
 trust_level = "trusted"
@@ -56,6 +55,9 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/Users/eunhwa/IdeaProjects/be-bang9"]
+trust_level = "trusted"
+
+[projects."/Users/eunhwa/Documents/Codex/2026-06-22/codex-config-toml-codex-cli"]
 trust_level = "trusted"
 
 [notice]
@@ -223,9 +225,14 @@ source_type = "local"
 source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-06-21T10:27:27Z"
+last_updated = "2026-06-22T04:06:12Z"
 source_type = "local"
 source = "/Users/eunhwa/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[marketplaces.ponytail]
+last_updated = "2026-06-22T02:49:02Z"
+source_type = "git"
+source = "https://github.com/DietrichGebert/ponytail.git"
 
 
 [mcp_servers.context7]
