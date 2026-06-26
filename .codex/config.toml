@@ -66,6 +66,9 @@ trust_level = "trusted"
 [projects."/Users/eunhwa/tmp/tmp2/task-tool"]
 trust_level = "trusted"
 
+[projects."/Users/eunhwa/Documents/Codex/2026-06-26/new-chat"]
+trust_level = "trusted"
+
 [notice]
 fast_default_opt_out = true
 
@@ -141,6 +144,9 @@ enabled = true
 enabled = true
 
 [plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
 enabled = true
 
 [hooks.state]
@@ -224,12 +230,12 @@ global = "intellij"
 "/Users/eunhwa/Documents/New project" = "intellij"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-26T09:38:02Z"
+last_updated = "2026-06-26T13:16:22Z"
 source_type = "local"
 source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-06-22T04:06:12Z"
+last_updated = "2026-06-26T13:18:07Z"
 source_type = "local"
 source = "/Users/eunhwa/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
