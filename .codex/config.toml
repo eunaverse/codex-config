@@ -242,7 +242,7 @@ global = "intellij"
 "/Users/eunhwa/Documents/New project" = "intellij"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-27T00:58:10Z"
+last_updated = "2026-06-27T01:21:49Z"
 source_type = "local"
 source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
