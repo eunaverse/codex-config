@@ -78,6 +78,9 @@ trust_level = "trusted"
 [projects."/Users/eunhwa/Documents/Codex/2026-06-27/meetai-prd-product-requirements-document-1"]
 trust_level = "trusted"
 
+[projects."/Users/eunhwa/Documents/Codex/2026-06-27/new-chat"]
+trust_level = "trusted"
+
 [notice]
 fast_default_opt_out = true
 
@@ -107,12 +110,12 @@ NODE_REPL_NODE_MODULE_DIRS = "/Users/eunhwa/Applications/Codex.app/Contents/Reso
 NODE_REPL_NODE_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/eunhwa/.codex"
 CODEX_HOME = "/Users/eunhwa/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "d1a8040310e3ed270b3d17f6f3d41f4cdbad9096fa1a4f7c425fbb37afe949d3"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "85aecd42bf7542da8fd962aa9551d7ccfca3e4e8b41d6fa095d7d4e96d44c22f"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.623.31921"
+BROWSER_USE_CODEX_APP_VERSION = "26.623.41415"
 CODEX_CLI_PATH = "/Users/eunhwa/Applications/Codex.app/Contents/Resources/codex"
 
 [features]
@@ -239,12 +242,12 @@ global = "intellij"
 "/Users/eunhwa/Documents/New project" = "intellij"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-26T13:16:22Z"
+last_updated = "2026-06-27T00:58:10Z"
 source_type = "local"
 source = "/Users/eunhwa/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-06-26T14:57:31Z"
+last_updated = "2026-06-27T00:53:02Z"
 source_type = "local"
 source = "/Users/eunhwa/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
